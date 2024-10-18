@@ -2,25 +2,25 @@
   "version": 2,
   "builds": [
     {
-      "src": "./server/main.py",
+      "src": "server/main.py",
       "use": "@vercel/python"
     },
     {
-      "src": "./client/package.json",
+      "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "./client/dist"
+        "distDir": "client/dist"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "./server/main.py"
+      "dest": "server/main.py"
     },
     {
       "src": "/(.*)",
-      "dest": "./client/dist/$1"
+      "dest": "client/dist/$1"
     }
   ]
 }
